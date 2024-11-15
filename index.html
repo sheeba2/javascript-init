@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock Project in Javascript</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: rgba(109, 111, 103);
+      color: aliceblue;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    .clock-container {
+      text-align: center;
+      font-size: 48px;
+      border: 2px solid white;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.4);
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="clock-container">
+    <h1 class="clock">00:00:00</h1>
+  </div>
+
+  <script>
+    setInterval(() => {
+      const element = document.querySelector('.clock');
+
+      const time = new Date();
+      const option = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      }
+
+      element.textContent = time.toLocaleTimeString('en-US', option);
+    }, 1000)
+
+  </script>
+
+</body>
+
+</html>
